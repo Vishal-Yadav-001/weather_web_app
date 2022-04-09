@@ -1,35 +1,45 @@
-.logo img {
-  padding: 30px 0;
-  width: 100%;
+.grid-sm {
+  @apply sm:grid-cols-1;
 }
-
-.resource-list {
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: larger;
-  padding: 10px;
-  text-align: center;
+.grid-md {
+  @apply md:grid-cols-1;
 }
-
-.resource-list ul {
-    text-align: left;
-    margin: 0 auto;
-    width: 300px;
+.grid-lg {
+  @apply lg:grid-cols-2;
 }
-
-.resource-list a {
-  color: black;
-  line-height: 30px;
+.grid-xl {
+  @apply xl:grid-cols-2;
 }
-
-footer {
-  bottom: 10px;
-  font-family: Helvetica, Arial, sans-serif;
-  margin: 0 auto;
-  width: 100%;
-  position: fixed;
-  text-align: center;
+.sections {
+  @apply relative sm:h-screen md:h-screen  lg:h-screen xl:h-screen;
 }
-
-footer img {
-    width: 20px;
+.btn {
+  @apply bg-yellow-500 hover:bg-green-200 hover:text-yellow-600 text-white font-bold py-2 px-4 rounded-full;
+  @apply my-4 mx-48 px-20 font-mono;
+}
+.heading {
+  @apply font-bold text-center text-gray-400 text-3xl;
+  @apply py-4;
+}
+.content {
+  @apply font-serif text-center text-base sm:text-[1em] md:text-[1em] lg:text-xl;
+}
+.signUpForm{
+  @apply absolute bg-black sm:mx-8 my-8 rounded-lg;
+  @apply lg:mr-44
+  } 
+.form-Content{
+  @apply  grid text-red-800 gap-4
+}
+input{
+  @apply sm:ml-8 my-2 p-4 md:ml-8 my-2 p-4 lg:rounded-xl;
+}
+input[name="email"],input[name="animal"]{
+ @apply  lg:pr-[calc(100vh-20rem)] md:pr-[calc(45vh-2rem)] ;
+}
+input[name="last"]{
+  @apply lg:ml-8 pr-20 
+}
+input[name="first"]{
+  @apply lg:pr-12  
 }
