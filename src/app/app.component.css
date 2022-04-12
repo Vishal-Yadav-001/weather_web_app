@@ -1,45 +1,101 @@
-.grid-sm {
-  @apply sm:grid-cols-1;
+.signupForm{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 95vh;
 }
-.grid-md {
-  @apply md:grid-cols-1;
+.form{
+ background-color: white;
+ width: 25em; 
+ border-radius: .5em;
+ padding: 1.25em 2.5em;
+ box-shadow: 0 10px 25px rgba(92, 99, 105, .2);
 }
-.grid-lg {
-  @apply lg:grid-cols-2;
+.title{
+  font-size: 50px;
+  margin-bottom:  50px ;
 }
-.grid-xl {
-  @apply xl:grid-cols-2;
+.inputContainer{
+  position: relative;
+  height: 2.8125em;
+  width: 90%;
+  margin-bottom: 1.0625em;
 }
-.sections {
-  @apply relative sm:h-screen md:h-screen  lg:h-screen xl:h-screen;
+
+.input{
+  position:absolute;
+  top:0;
+  left:0;
+  height: 100%;
+  width: 100%;
+  border: 1px solid #DADCE0;
+  border-radius: 0.4375em;
+  font-size: 1em;
+  padding: 0 1.25em;
+  outline: none;
+  background: none;
+  z-index: 1;
 }
-.btn {
-  @apply bg-yellow-500 hover:bg-green-200 hover:text-yellow-600 text-white font-bold py-2 px-4 rounded-full;
-  @apply my-4 mx-48 px-20 font-mono;
+::placeholder {
+  color: transparent;
 }
-.heading {
-  @apply font-bold text-center text-gray-400 text-3xl;
-  @apply py-4;
+.label{
+  position:absolute;
+  top:0.9375em;
+  left: 0.9375em;
+  padding: 0 0.25em;
+  background-color: white;
+  color: #DADCE0;
+  font-size: 16px;
+  z-index: 0;
+  transition: 0.5s;
 }
-.content {
-  @apply font-serif text-center text-base sm:text-[1em] md:text-[1em] lg:text-xl;
+
+.submitBtn {
+  display: block;
+  margin-left: auto;
+  padding: 15px 30px;
+  border: none;
+  background-color: purple;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 30px;
 }
-.signUpForm{
-  @apply absolute bg-black sm:mx-8 my-8 rounded-lg;
-  @apply lg:mr-44
-  } 
-.form-Content{
-  @apply  grid text-red-800 gap-4
+.submitBtn:hover {
+  background-color: #9867C5;
+  transform: translateY(-2px);
 }
-input{
-  @apply sm:ml-8 my-2 p-4 md:ml-8 my-2 p-4 lg:rounded-xl;
+
+.input:focus + .label {
+  top: -7px;
+  left: 3px;
+  z-index: 10;
+  font-size: 14px;
+  font-weight: 600;
+  color: purple;
 }
-input[name="email"],input[name="animal"]{
- @apply  lg:pr-[calc(100vh-20rem)] md:pr-[calc(45vh-2rem)] ;
+.input:focus {
+  transition: 0.5s;
+  border: 2px solid purple;
 }
-input[name="last"]{
-  @apply lg:ml-8 pr-20 
+.input:not(:placeholder-shown) + .label{
+  top: -7px;
+  left: 3px;
+  z-index: 10;
+  font-size: 14px;
+  font-weight: 600;
 }
-input[name="first"]{
-  @apply lg:pr-12  
+.input:not(:placeholder-shown,:focus) + .label{
+  top: -7px;
+  left: 3px;
+  z-index: 10;
+  font-size: 14px;
+  font-weight: 600;
+  color: green;
+}
+.input:not(:focus,:placeholder-shown) {
+  transition: 0.5s;
+  border: 2px solid green;
 }
