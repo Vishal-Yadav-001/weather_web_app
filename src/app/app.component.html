@@ -1,26 +1,106 @@
 <div class="signupForm">
-  <form class="form" action="POST" data-netlify = "true">
-    <h1 class="title"> Sign up</h1>
+  <form
+    class="form"
+    [formGroup]="signup"
+    data-netlify="true"
+    (ngSubmit)="submitForm()"
+  >
+    <h1 class="title">Sign up</h1>
+
+    <div
+      class="errors"
+      *ngIf="formState('email')?.errors && formState('email')?.dirty"
+    >
+      <span> Please fill email </span>
+    </div>
     <div class="inputContainer">
-      <input type="text" name="" id="" placeholder="a" class="input">
+      <input
+        type="text"
+        name=""
+        id=""
+        placeholder="a"
+        class="input"
+        formControlName="email"
+      />
       <label for="" class="label">Email</label>
     </div>
+    <div
+      class="errors"
+      *ngIf="formState('userName')?.errors && formState('userName')?.dirty"
+    >
+      <span> Please fill Username </span>
+    </div>
     <div class="inputContainer">
-      <input type="text" name="" id="" placeholder="a" class="input">
+      <input
+        type="text"
+        name=""
+        id=""
+        placeholder="a"
+        class="input"
+        formControlName="userName"
+      />
       <label for="" class="label">Username</label>
     </div>
+
+    <div
+      class="errors"
+      *ngIf="formState('password')?.errors && formState('password')?.dirty"
+    >
+      <span> Please fill password </span>
+    </div>
     <div class="inputContainer">
-      <input type="text" name="" id="" placeholder="a" class="input">
+      <input
+        type="text"
+        name=""
+        id=""
+        placeholder="a"
+        class="input"
+        formControlName="password"
+      />
       <label for="" class="label">Password</label>
     </div>
+
+    <div
+      class="errors"
+      *ngIf="
+        formState('confirmPassword')?.errors &&
+        formState('confirmPassword')?.dirty
+      "
+    >
+      <span> Please fill Confirm Password </span>
+    </div>
+
     <div class="inputContainer">
-      <input type="text" name="" id="" placeholder="a" class="input">
+      <input
+        type="text"
+        name=""
+        id=""
+        placeholder="a"
+        class="input"
+        formControlName="confirmPassword"
+      />
       <label for="" class="label">Confirm Password</label>
     </div>
+
+    <div
+      class="errors"
+      *ngIf="formState('favAnimal')?.errors && formState('favAnimal')?.dirty"
+    >
+      <span> Please fill favorite animal name </span>
+    </div>
+
     <div class="inputContainer">
-      <input type="text" name="" id="" placeholder="a" class="input">
+      <input
+        type="text"
+        name=""
+        id=""
+        placeholder="a"
+        class="input"
+        formControlName="favAnimal"
+      />
       <label for="" class="label">Favorite animal</label>
     </div>
-    <button class="submitBtn " type="submit">Sign up</button>
+
+    <button class="submitBtn" type="submit">Sign up</button>
   </form>
 </div>
