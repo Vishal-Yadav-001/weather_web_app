@@ -1,0 +1,48 @@
+<form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+  <input type="text" placeholder="Enter city" formControlName="city" minlength="3">
+  <button type="submit">GO</button>
+</form>
+
+
+
+<div class="container">
+  <div class="main-section">
+    <div class="upper-section">
+      <img *ngIf="(temperature < 20)"
+        class="hot"
+        src="/assets/phil-muller-SuBr6PPSwuI-unsplash.jpg"
+        alt="cold"
+      />
+      <img *ngIf="(temperature > 20)"
+      class="hot"
+      src="/assets/hots.jpg"
+      alt="cold"
+    />
+      <p class="city">{{ cityName| uppercase }}</p>
+      <div *ngIf="weatherData" class="temp">
+        <p [ngClass]="temperature < 20 ? 'temperature-cold':'temperature-hot'">{{ weatherData.temp }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="sub -section">
+    <p class="more-info">More info</p>
+    
+      <div style="padding-top:1em;color: white;">
+        <span class="minTemp">
+        <img src="/assets/temperature.png" alt="min" />
+        <span class="text">Min</span>
+         {{ weatherData?.min_temp }}</span>
+        <span>
+        <img src="/assets/hot.png" alt="max" />
+        <span class="text">Max</span> {{ weatherData?.max_temp }}</span>
+      </div>
+      <div style="padding-top:1em;color: white;">
+        <span class="humidity">
+        <img src="/assets/humidity.png" alt="humidity" />
+        <span class="text">Humidity</span> {{ weatherData?.humidity }}</span>
+
+        <img src="/assets/wind.png" alt="wind" />
+        <span> <span class="text">Wind</span> {{ weatherData?.wind_speed }}</span>
+      </div>
+  </div>
+</div>
