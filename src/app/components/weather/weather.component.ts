@@ -13,7 +13,7 @@ export class WeatherComponent implements OnInit {
     private fb:FormBuilder
     ) {}
 
-  cityName: string = '';
+  cityName: string = 'Welcome';
   weatherData?: Weather;
   temperature:number = 20;
   searchForm:any;
@@ -31,12 +31,16 @@ export class WeatherComponent implements OnInit {
 
   private getWeatherData(cityName: string) {
   this.weatherService.getWeatherData(cityName)
-  .subscribe({
-      next: (response) => {
-      this.weatherData = {...response},
-      this.temperature = response?.temp
-    }
-  });
+  .subscribe(
+    result => {
+      // Handle result
+     this.weatherData = result,
+     this.temperature = result?.temp
+    },
+    error => {
+      this.cityName = error.status === 400 ? 'Please check city name' : 'We are facing issues'
+    },
+  );
   }
 
 }
