@@ -26,7 +26,7 @@ export class WeatherComponent implements OnInit {
 
   onSubmit() {
    this.cityName = this.searchForm?.controls.city.value.length < 3 ? 'Enter min 3 characters':this.searchForm?.controls.city.value ;
-  this.getWeatherData(this.searchForm?.controls.city.value);
+   if(this.searchForm?.controls.city.value.length > 3) {this.getWeatherData(this.searchForm?.controls.city.value);}
   }
 
   private getWeatherData(cityName: string) {
