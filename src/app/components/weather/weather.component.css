@@ -108,20 +108,66 @@ p{
 .sunset{
   left: 16em;
 }
-.minTemp{
-  margin-top: 1em;
-  padding-left: .5em;
-  padding-right:10em;
-}
-.humidity{
-  padding-top: 10em;
-  padding-left: .5em;
-  padding-right:8.5em;
-}
+
 .text{
   font-size: 1em;
   color: var(--white);
 }
 .more-info{
   text-align: center;padding-top: 1em;font-size: 1em;color: white;
+}
+
+@media (max-width:700px) {
+  .container {
+   width: 90%;
+   margin: 1em;
+  }
+  .form{
+    margin-left: .5em;
+    padding: .5em;
+  }
+  .temperature-cold{
+    color: rgb(27, 25, 25);
+    font-size: 2em;
+  }
+  
+  .temperature-hot{
+    color: rgb(85, 99, 226);
+    font-size: 2em;
+  }
+  .main-section{
+    height: 50%;
+  }
+  .sub-section{
+    position: relative;
+    background: black;
+    height: 60%;
+  }
+  .text{
+    font-size: 1em;
+    color: var(--white);
+  }
+  img{
+    position: relative;
+    width: 3em;
+  }
+  .widgets-top{
+   margin-top: 1em;
+   color: var(--white);
+   display: flex;
+   flex-wrap: wrap;
+   flex-direction: column;
+   flex-grow: 1;
+  }
+  .widgets-bottom{
+    margin-top: .5em;
+    color: var(--white);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    flex-grow: 2;
+   }
+   .min-temp,.humidity,.wind{
+   padding: .5em;
+   }
 }

@@ -1,48 +1,65 @@
-<form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
-  <input type="text" placeholder="Enter city" formControlName="city" minlength="3">
+<form [formGroup]="searchForm" (ngSubmit)="onSubmit()" class="form">
+  <input
+    type="text"
+    placeholder="Enter city"
+    formControlName="city"
+    minlength="3"
+  />
   <button type="submit">GO</button>
 </form>
-
-
 
 <div class="container">
   <div class="main-section">
     <div class="upper-section">
-      <img *ngIf="(temperature < 20)"
+      <img
+        *ngIf="temperature < 20"
         class="hot"
         src="/assets/phil-muller-SuBr6PPSwuI-unsplash.jpg"
         alt="cold"
       />
-      <img *ngIf="(temperature > 20)"
-      class="hot"
-      src="/assets/hots.jpg"
-      alt="cold"
-    />
-      <p class="city">{{ cityName| uppercase }}</p>
+      <img
+        *ngIf="temperature > 20"
+        class="hot"
+        src="/assets/hots.jpg"
+        alt="cold"
+      />
+      <p class="city">{{ cityName | uppercase }}</p>
       <div *ngIf="weatherData" class="temp">
-        <p [ngClass]="temperature < 20 ? 'temperature-cold':'temperature-hot'">{{ weatherData.temp }}</p>
+        <p
+          [ngClass]="temperature < 20 ? 'temperature-cold' : 'temperature-hot'"
+        >
+          {{ temperature }}<sup style="font-size:.5em ;">0</sup>C
+        </p>
       </div>
     </div>
   </div>
-  <div class="sub -section">
+  <div class="sub-section">
     <p class="more-info">More info</p>
-    
-      <div style="padding-top:1em;color: white;">
-        <span class="minTemp">
+    <div class="widgets-top">
+      <div class="min-temp" style="padding:.5em">
         <img src="/assets/temperature.png" alt="min" />
-        <span class="text">Min</span>
-         {{ weatherData?.min_temp }}</span>
-        <span>
+        <span > Min</span>
+        <span> {{ weatherData?.min_temp || 0 }}<sup style="font-size:.5em ;">0</sup>C</span>
+      </div>
+      <div class="max-temp">
         <img src="/assets/hot.png" alt="max" />
-        <span class="text">Max</span> {{ weatherData?.max_temp }}</span>
+        <span > Max</span>
+        <span> {{ weatherData?.max_temp || 0}}<sup style="font-size:.5em ;">0</sup>C</span>
       </div>
-      <div style="padding-top:1em;color: white;">
-        <span class="humidity">
+    </div>
+    <div class="widgets-bottom">
+      <div class="humidity"style="padding-top:.5em">
         <img src="/assets/humidity.png" alt="humidity" />
-        <span class="text">Humidity</span> {{ weatherData?.humidity }}</span>
-
-        <img src="/assets/wind.png" alt="wind" />
-        <span> <span class="text">Wind</span> {{ weatherData?.wind_speed }}</span>
+        <span> Humidity</span>
+        <span> {{ weatherData?.humidity || 0 }}%</span>
       </div>
-  </div>
+      <div class="wind">
+        <img src="/assets/wind.png" alt="wind" />
+        <span> Wind</span>
+        <span> {{ weatherData?.wind_speed||0 }} mph</span>
+      </div>
+    </div>
+
+   
+    </div>
 </div>
