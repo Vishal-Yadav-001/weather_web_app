@@ -27,7 +27,7 @@ button:hover{
     position: relative; 
     overflow: hidden;
     width: 100%; 
-    height: 60%;
+    height: 50%;
     border-top-left-radius: 20px; 
     border-top-right-radius: 20px;
   }
@@ -39,7 +39,7 @@ button:hover{
     height: auto;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
-    padding: 1em;
+    padding: 2em;
     display: flex;
     flex-direction: column;
   }
@@ -54,11 +54,10 @@ button:hover{
 .upper-section{
   height: 50%;
   padding-top:1em ;
- 
 }
 .lower-section{
   height: 50%;
-  background-color: yellow;
+
   display: flex;
 }
 img{
@@ -81,7 +80,6 @@ p{
 .temp{
   font-weight: bold;
   font-family:  'Roboto', sans-serif;
- 
 }
 .temperature-cold{
   color: rgb(27, 25, 25);
@@ -114,10 +112,33 @@ p{
   color: var(--white);
 }
 .more-info{
-  text-align: center;padding-top: 1em;font-size: 1em;color: white;
+  text-align: center;
+  font-size: 1em;
+  color: white;
 }
-
-@media (max-width:700px) {
+.widgets-top{
+  margin-top: 1em;
+  color: var(--white);
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  flex-grow: 1;
+ }
+ .widgets-bottom{
+   margin-top: 2em;
+   color: var(--white);
+   display: flex;
+   flex-wrap: wrap;
+   flex-direction: row;
+   flex-grow: 1;
+  }
+  .max-temp{
+    padding-left: 3rem;
+  }
+  .wind{
+    padding-left: 1.5rem;
+  }
+@media (max-width:450px) {
   .container {
    width: 90%;
    margin: 1em;
@@ -169,5 +190,41 @@ p{
    }
    .min-temp,.humidity,.wind{
    padding: .5em;
+   }
+   .max-temp{
+    padding-left: 0rem;
+  }
+   .city{
+     color: var(--white);
+     font-size: 1.5em;
+   }
+}
+
+@media (max-width:400px) {
+  .widgets-top{
+   margin-top: .5em;
+   color: var(--white);
+   display: flex;
+   flex-wrap: wrap;
+   flex-direction: row;
+   flex-grow: 1;
+  }
+  .widgets-bottom{
+    margin-top: .5em;
+    color: var(--white);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    flex-grow: 2;
+   }
+   .min-temp,.humidity,.wind{
+   padding: .5em;
+   }
+   .max-temp{
+    padding-top: 1rem;
+  }
+   .city{
+     color: var(--white);
+     font-size: 1.5em;
    }
 }
