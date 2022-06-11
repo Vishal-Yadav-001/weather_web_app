@@ -227,4 +227,7 @@ p{
      color: var(--white);
      font-size: 1.5em;
    }
+   .toast{
+     width: 20%;
+   }
 }
